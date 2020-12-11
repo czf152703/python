@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block styles %}
+<link rel="stylesheet" href="/plan.css" />
+{% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="paper">
+    <div class="paper-head">
+        <div id="new-btn" class="btn">创建课表</div>
+    </div>
+    <div class="paper-body">
+        <table id="plan-table" class="table">
+            <thead>
+                <tr>
+                    <th class="col-plan_xueqi">学期</th>
+                    <th class="col-cuo_name">课程</th>
+                    <th class="col-plan_time">时间</th> 
+                    <th class="col-plan_time2">节次</th> 
+                    <th class="col-plan_didian">地点</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="plan-editor dialog-background">
+        <form class="dialog">
+            <div class="dialog-head"></div>
+            <div class="dialog-body">
+                <input type="hidden" name="plan_sn" />
+                
+                <label>学期: </label>
+                <input type="text" name="plan_xueqi" />
+                 
+                <label>课程: </label>
+                <input type="text" name="cuo_sn" />
+                <label>时间: </label>
+                <input type="text" name="plan_time" />
+                <label>节次:</label>
+                <input type="text" name="plan_time2">
+                <label>地点: </label>
+                <input type="text" name="plan_didian" />
+
+            </div>
+            <div class="dialog-footer">
+                <a id="save-btn" class="btn">保存</a>
+                <a id="close-btn" class="btn">关闭</a>
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+    <div class="comfirmation-dialog dialog-background">
+        <form class="dialog">
+            <div class="dialog-head"></div>
+            <div class="dialog-body">
+                <div id="message"></div>
+            </div>
+            <div class="dialog-footer">
+                <a id="ok-btn" class="btn">确定</a>
+                <a id="cancel-btn" class="btn">放弃</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/plan.js">
+
+</script>
+{% endblock %}
